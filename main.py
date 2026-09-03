@@ -126,3 +126,7 @@ async def proxy_chat_completions(request: Request):
         )
     except httpx.RequestError as exc:
         raise HTTPException(status_code=502, detail=f"Proxy error: {str(exc)}")
+
+def start_server():
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000)

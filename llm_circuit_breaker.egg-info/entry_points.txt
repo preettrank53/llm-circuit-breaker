@@ -1,0 +1,2 @@
+[console_scripts]
+circuit-breaker = main:start_server

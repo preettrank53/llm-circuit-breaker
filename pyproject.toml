@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-circuit-breaker"
+version = "0.1.0"
+description = "A local proxy circuit breaker to stop runaway AI agents from burning API budgets."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "httpx",
+    "python-dotenv"
+]
+
+[project.scripts]
+circuit-breaker = "main:start_server"
+
+[tool.setuptools]
+py-modules = ["main"]

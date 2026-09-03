@@ -1,7 +1,20 @@
-![Agent Circuit Breaker Demo](assets/demo.gif)
+Metadata-Version: 2.4
+Name: llm-circuit-breaker
+Version: 0.1.0
+Summary: A local proxy circuit breaker to stop runaway AI agents from burning API budgets.
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: httpx
+Requires-Dist: python-dotenv
+Dynamic: license-file
 
-![Architecture Diagram](assets/architecture.png)
-![Flow Diagram](assets/flow.png)
+![Agent Circuit Breaker Demo](demo.gif)
+
+![Architecture Diagram](Gemini_Generated_Image_vl5h9fvl5h9fvl5h.png)
+![Flow Diagram](_-%20visual%20selection.png)
 
 # Agent Circuit Breaker
 
