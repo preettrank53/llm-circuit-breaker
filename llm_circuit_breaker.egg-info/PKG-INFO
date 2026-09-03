@@ -17,14 +17,15 @@ Requires-Dist: httpx
 Requires-Dist: python-dotenv
 Dynamic: license-file
 
-# Agent Circuit Breaker
+# LLM Budget Guard
+[![Tests](https://github.com/preettrank53/llm-circuit-breaker/actions/workflows/test.yml/badge.svg)](https://github.com/preettrank53/llm-circuit-breaker/actions)
 
 **GitHub Repository:** [https://github.com/preettrank53/llm-circuit-breaker](https://github.com/preettrank53/llm-circuit-breaker)
 
 A local circuit breaker to stop multi-agent workflows from bankrupting your OpenAI API limits.
 
 <p align="center">
-  <img src="assets/demo.gif" alt="Agent Circuit Breaker Demo" width="800"/>
+  <img src="assets/demo.gif" alt="LLM Budget Guard Demo" width="800"/>
 </p>
 
 ## Architecture & Data Flow
