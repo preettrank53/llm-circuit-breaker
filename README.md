@@ -1,13 +1,20 @@
-![Agent Circuit Breaker Demo](assets/demo.gif)
-
-![Architecture Diagram](assets/architecture.png)
-![Flow Diagram](assets/flow.png)
-
 # Agent Circuit Breaker
 
 **GitHub Repository:** [https://github.com/preettrank53/llm-circuit-breaker](https://github.com/preettrank53/llm-circuit-breaker)
 
 A local circuit breaker to stop multi-agent workflows from bankrupting your OpenAI API limits.
+
+<p align="center">
+  <img src="assets/demo.gif" alt="Agent Circuit Breaker Demo" width="800"/>
+</p>
+
+## Architecture & Data Flow
+
+<p align="center">
+  <img src="assets/architecture.png" alt="Architecture Diagram" width="45%"/>
+  &nbsp; &nbsp;
+  <img src="assets/_-%20visual%20selection.png" alt="Flow Diagram" width="45%"/>
+</p>
 
 ## Quickstart
 
