@@ -62,6 +62,10 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
 @app.get("/v1/budget")
 def read_budget():
     tokens_used, limit_tokens = get_budget()
