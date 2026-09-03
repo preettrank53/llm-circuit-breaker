@@ -79,3 +79,18 @@ Control your budget programmatically via simple HTTP endpoints:
 
 - **Check Budget Status:** `GET /v1/budget`
 - **Reset Token Counter:** `POST /v1/budget/reset`
+
+## Performance Benchmark
+
+The proxy uses an asynchronous connection pool via FastAPI's `lifespan` architecture, meaning it holds the SSL handshake open. The latency overhead is virtually zero. 
+
+```text
+Starting benchmark...
+Measuring DIRECT latency (5 requests)...
+Average Direct Latency: 473.53 ms
+
+Measuring PROXY latency (5 requests)...
+Average Proxy Latency:  470.80 ms
+
+Total Proxy Overhead: -2.73 ms
+```
