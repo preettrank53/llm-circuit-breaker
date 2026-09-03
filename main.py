@@ -129,4 +129,6 @@ async def proxy_chat_completions(request: Request):
 
 def start_server():
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000)
+    # Local CLI runs bind to 127.0.0.1 for security. 
+    # Docker users will still map 8000:8000 in their compose file.
+    uvicorn.run("main:app", host="127.0.0.1", port=8000)

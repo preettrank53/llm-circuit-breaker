@@ -2,6 +2,12 @@ Metadata-Version: 2.4
 Name: llm-circuit-breaker
 Version: 0.1.0
 Summary: A local proxy circuit breaker to stop runaway AI agents from burning API budgets.
+Project-URL: Homepage, https://github.com/preettrank53/llm-circuit-breaker
+Project-URL: Bug Tracker, https://github.com/preettrank53/llm-circuit-breaker/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
 License-File: LICENSE
@@ -92,3 +98,18 @@ Control your budget programmatically via simple HTTP endpoints:
 
 - **Check Budget Status:** `GET /v1/budget`
 - **Reset Token Counter:** `POST /v1/budget/reset`
+
+## Performance Benchmark
+
+The proxy uses an asynchronous connection pool via FastAPI's `lifespan` architecture, meaning it holds the SSL handshake open. In a small five-request smoke test, end-to-end latency was within normal network variance.
+
+```text
+Starting benchmark...
+Measuring DIRECT latency (5 requests)...
+Average Direct Latency: 473.53 ms
+
+Measuring PROXY latency (5 requests)...
+Average Proxy Latency:  470.80 ms
+
+Total Proxy Overhead: -2.73 ms
+```

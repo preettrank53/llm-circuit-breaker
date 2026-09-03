@@ -14,6 +14,16 @@ dependencies = [
     "httpx",
     "python-dotenv"
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/preettrank53/llm-circuit-breaker"
+"Bug Tracker" = "https://github.com/preettrank53/llm-circuit-breaker/issues"
 
 [project.scripts]
 circuit-breaker = "main:start_server"

@@ -82,7 +82,7 @@ Control your budget programmatically via simple HTTP endpoints:
 
 ## Performance Benchmark
 
-The proxy uses an asynchronous connection pool via FastAPI's `lifespan` architecture, meaning it holds the SSL handshake open. The latency overhead is virtually zero. 
+The proxy uses an asynchronous connection pool via FastAPI's `lifespan` architecture, meaning it holds the SSL handshake open. In a small five-request smoke test, end-to-end latency was within normal network variance.
 
 ```text
 Starting benchmark...
