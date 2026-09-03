@@ -11,33 +11,58 @@ A local circuit breaker to stop multi-agent workflows from bankrupting your Open
 ## Architecture & Data Flow
 
 <p align="center">
-  <img src="assets/architecture.png" alt="Architecture Diagram" width="45%"/>
-  &nbsp; &nbsp;
-  <img src="assets/_-%20visual%20selection.png" alt="Flow Diagram" width="45%"/>
+  <img src="assets/architecture.png" alt="Architecture Diagram" width="700"/>
 </p>
 
-## Quickstart
+<p align="center">
+  <img src="assets/_-%20visual%20selection.png" alt="Flow Diagram" width="700"/>
+</p>
 
-1. Create a `.env` file with your upstream API credentials:
+## Installation & Quickstart
+
+You can run the circuit breaker natively via Python or as an isolated Docker container.
+
+### Option 1: Native Python (CLI)
+
+1. **Install the package:**
+   ```bash
+   pip install llm-circuit-breaker
+   ```
+2. **Set your credentials:**
+   Create a `.env` file in your working directory:
    ```env
    UPSTREAM_BASE_URL=https://api.openai.com/v1
    UPSTREAM_API_KEY=your_actual_api_key_here
    ```
-2. Start the proxy using Docker Compose:
+3. **Start the server:**
+   ```bash
+   circuit-breaker
+   ```
+
+### Option 2: Docker Compose
+
+1. **Set your credentials:** Create a `.env` file as shown above.
+2. **Start the container:**
    ```bash
    docker-compose up -d
    ```
 
-## Usage
+## Usage & Framework Integrations
 
-Point your AI agent's base URL to the local proxy. It will automatically intercept requests, check your budget, and forward them safely.
+Point your AI agent's base URL to the local proxy (`http://localhost:8000/v1`). It will automatically intercept requests, check your budget, and forward them safely.
+
+We have included drop-in examples for popular frameworks in the `examples/` directory:
+- [LangChain Integration](examples/langchain_demo.py)
+- [CrewAI Integration](examples/crewai_demo.py)
+
+### Standard OpenAI SDK Example
 
 ```python
 from openai import OpenAI
 
 client = OpenAI(
     base_url="http://localhost:8000/v1",
-    api_key="dummy" # Proxy uses your real key
+    api_key="dummy-key" # Proxy injects your real key automatically
 )
 
 response = client.chat.completions.create(
@@ -50,7 +75,7 @@ print(response.choices[0].message.content)
 
 ## Management API
 
-Control your budget programmatically:
+Control your budget programmatically via simple HTTP endpoints:
 
-- **Check Budget:** `GET /v1/budget`
-- **Reset Budget:** `POST /v1/budget/reset`
+- **Check Budget Status:** `GET /v1/budget`
+- **Reset Token Counter:** `POST /v1/budget/reset`
