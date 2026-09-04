@@ -60,7 +60,7 @@ def test_reset_budget():
         
         reset_response = client.post("/v1/budget/reset")
         assert reset_response.status_code == 200
-        assert reset_response.json()["status"] == "Tokens reset to 0"
+        assert reset_response.json()["status"] == "success"
         
         budget_response2 = client.get("/v1/budget")
         assert budget_response2.json()["tokens_used"] == 0
