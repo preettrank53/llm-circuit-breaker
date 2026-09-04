@@ -22,9 +22,7 @@ A local circuit breaker to stop multi-agent workflows from bankrupting your Open
 ## Security and Privacy
 
 > [!IMPORTANT]
-> **Data Privacy:** This proxy does **not** log, store, or transmit your prompt data or API keys to any third party. Your payloads are routed directly from your local machine to the officially configured upstream provider (e.g., OpenAI).
-> 
-> **Network Security:** By default, the native Python CLI strictly binds to `127.0.0.1:8000` (loopback only) to prevent unauthorized access from other machines on your local network.
+> **Security and Privacy:** The proxy forwards requests to the upstream provider you configure. It binds to 127.0.0.1 by default and does not send telemetry to a separate service. Depending on configuration, local usage/budget metadata may be stored in SQLite. Do not expose the proxy beyond localhost without authentication, transport security, and a review of your threat model.
 
 ## Installation & Quickstart
 
