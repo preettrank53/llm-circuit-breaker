@@ -5,6 +5,8 @@
 
 A local circuit breaker to stop multi-agent workflows from bankrupting your OpenAI API limits.
 
+*Unlike Node-based gateways, this is a minimal FastAPI proxy designed specifically to sit alongside your local LangChain and CrewAI Python scripts.*
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/preettrank53/llm-circuit-breaker/main/assets/demo.gif" alt="LLM Budget Guard Demo" width="800"/>
 </p>
