@@ -27,7 +27,7 @@ You can run the circuit breaker natively via Python or as an isolated Docker con
 
 1. **Install the package:**
    ```bash
-   pip install llm-circuit-breaker
+   pip install llm-budget-proxy
    ```
 2. **Set your credentials:**
    Create a `.env` file in your working directory:
