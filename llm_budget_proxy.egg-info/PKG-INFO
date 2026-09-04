@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
-Name: llm-circuit-breaker
-Version: 0.1.0
+Name: llm-budget-proxy
+Version: 0.1.1
 Summary: A local proxy circuit breaker to stop runaway AI agents from burning API budgets.
 Project-URL: Homepage, https://github.com/preettrank53/llm-circuit-breaker
 Project-URL: Bug Tracker, https://github.com/preettrank53/llm-circuit-breaker/issues
@@ -25,17 +25,17 @@ Dynamic: license-file
 A local circuit breaker to stop multi-agent workflows from bankrupting your OpenAI API limits.
 
 <p align="center">
-  <img src="assets/demo.gif" alt="LLM Budget Guard Demo" width="800"/>
+  <img src="https://raw.githubusercontent.com/preettrank53/llm-circuit-breaker/main/assets/demo.gif" alt="LLM Budget Guard Demo" width="800"/>
 </p>
 
 ## Architecture & Data Flow
 
 <p align="center">
-  <img src="assets/architecture.png" alt="Architecture Diagram" width="700"/>
+  <img src="https://raw.githubusercontent.com/preettrank53/llm-circuit-breaker/main/assets/architecture.png" alt="Architecture Diagram" width="700"/>
 </p>
 
 <p align="center">
-  <img src="assets/_-%20visual%20selection.png" alt="Flow Diagram" width="700"/>
+  <img src="https://raw.githubusercontent.com/preettrank53/llm-circuit-breaker/main/assets/_-%20visual%20selection.png" alt="Flow Diagram" width="700"/>
 </p>
 
 ## Installation & Quickstart
@@ -46,7 +46,7 @@ You can run the circuit breaker natively via Python or as an isolated Docker con
 
 1. **Install the package:**
    ```bash
-   pip install llm-circuit-breaker
+   pip install llm-budget-proxy
    ```
 2. **Set your credentials:**
    Create a `.env` file in your working directory:

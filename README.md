@@ -6,17 +6,17 @@
 A local circuit breaker to stop multi-agent workflows from bankrupting your OpenAI API limits.
 
 <p align="center">
-  <img src="assets/demo.gif" alt="LLM Budget Guard Demo" width="800"/>
+  <img src="https://raw.githubusercontent.com/preettrank53/llm-circuit-breaker/main/assets/demo.gif" alt="LLM Budget Guard Demo" width="800"/>
 </p>
 
 ## Architecture & Data Flow
 
 <p align="center">
-  <img src="assets/architecture.png" alt="Architecture Diagram" width="700"/>
+  <img src="https://raw.githubusercontent.com/preettrank53/llm-circuit-breaker/main/assets/architecture.png" alt="Architecture Diagram" width="700"/>
 </p>
 
 <p align="center">
-  <img src="assets/_-%20visual%20selection.png" alt="Flow Diagram" width="700"/>
+  <img src="https://raw.githubusercontent.com/preettrank53/llm-circuit-breaker/main/assets/_-%20visual%20selection.png" alt="Flow Diagram" width="700"/>
 </p>
 
 ## Installation & Quickstart
