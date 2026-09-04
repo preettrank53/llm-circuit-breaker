@@ -50,3 +50,17 @@ def test_429_rejection(mock_post):
         response2 = client.post("/v1/chat/completions", json={"model": "test", "messages": [{"role": "user", "content": "hi"}]})
         assert response2.status_code == 429
         assert "Local Token Budget Exceeded" in response2.json()["detail"]
+
+def test_reset_budget():
+    with TestClient(app) as client:
+        # First, simulate some usage by hitting the reset endpoint with a specific value? No, just reset it.
+        # To be thorough, we can manually check budget, then reset, then check again.
+        budget_response = client.get("/v1/budget")
+        assert budget_response.status_code == 200
+        
+        reset_response = client.post("/v1/budget/reset")
+        assert reset_response.status_code == 200
+        assert reset_response.json()["status"] == "Tokens reset to 0"
+        
+        budget_response2 = client.get("/v1/budget")
+        assert budget_response2.json()["tokens_used"] == 0
