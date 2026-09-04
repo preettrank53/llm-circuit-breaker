@@ -2,10 +2,11 @@ import pytest
 from fastapi.testclient import TestClient
 from unittest.mock import AsyncMock, patch
 import httpx
-from main import app, reset_tokens_used
+from main import app, reset_tokens_used, init_db
 
 @pytest.fixture(autouse=True)
 def reset_db():
+    init_db()
     reset_tokens_used()
 
 def test_health_check():
