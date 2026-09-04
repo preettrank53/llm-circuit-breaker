@@ -19,6 +19,13 @@ A local circuit breaker to stop multi-agent workflows from bankrupting your Open
   <img src="https://raw.githubusercontent.com/preettrank53/llm-circuit-breaker/main/assets/_-%20visual%20selection.png" alt="Flow Diagram" width="700"/>
 </p>
 
+## Security and Privacy
+
+> [!IMPORTANT]
+> **Data Privacy:** This proxy does **not** log, store, or transmit your prompt data or API keys to any third party. Your payloads are routed directly from your local machine to the officially configured upstream provider (e.g., OpenAI).
+> 
+> **Network Security:** By default, the native Python CLI strictly binds to `127.0.0.1:8000` (loopback only) to prevent unauthorized access from other machines on your local network.
+
 ## Installation & Quickstart
 
 You can run the circuit breaker natively via Python or as an isolated Docker container.
