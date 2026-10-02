@@ -41,7 +41,13 @@ You can run the circuit breaker natively via Python or as an isolated Docker con
    ```env
    UPSTREAM_BASE_URL=https://api.openai.com/v1
    UPSTREAM_API_KEY=your_actual_api_key_here
+   BUDGET_DB_PATH=data/budget.db
    ```
+   `BUDGET_DB_PATH` is optional. If unset or empty, it defaults to
+   `data/budget.db`. Relative paths are resolved from the working directory;
+   absolute paths and filename-only paths (for example `budget.db`) also work.
+   Missing parent directories are created. Set this before starting the server;
+   changing the path selects a different database, it does not move existing data.
 3. **Start the server:**
    ```bash
    circuit-breaker
