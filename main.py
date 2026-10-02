@@ -10,8 +10,10 @@ load_dotenv()
 
 UPSTREAM_BASE_URL = os.getenv("UPSTREAM_BASE_URL")
 UPSTREAM_API_KEY = os.getenv("UPSTREAM_API_KEY")
-DB_PATH = "data/budget.db"
-os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+DB_PATH = os.getenv("BUDGET_DB_PATH") or "data/budget.db"
+db_directory = os.path.dirname(DB_PATH)
+if db_directory:
+    os.makedirs(db_directory, exist_ok=True)
 
 # Global HTTPX Client
 http_client: httpx.AsyncClient = None
