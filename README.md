@@ -61,6 +61,29 @@ You can run the circuit breaker natively via Python or as an isolated Docker con
    docker-compose up -d
    ```
 
+#### Keep the SQLite database between container runs
+
+The supplied `docker-compose.yml` already mounts the local `data/` directory
+into the container:
+
+```yaml
+services:
+  budget-proxy:
+    volumes:
+      - ./data:/app/data
+```
+
+With the default `BUDGET_DB_PATH=data/budget.db`, the container writes
+`/app/data/budget.db`, which is stored as `./data/budget.db` beside the Compose
+file. The database, including the token counter, remains there when you run
+`docker-compose down` and is reused when you start the container again.
+
+Keep `BUDGET_DB_PATH` inside `/app/data` if you change it; for example,
+`BUDGET_DB_PATH=/app/data/team-budget.db` uses the same mount. A path outside
+that directory is not persisted by this mount. Changing the setting selects
+another database rather than moving the old one. Deleting the local `data/`
+directory removes the persisted database, so keep it when recreating containers.
+
 ## Usage & Framework Integrations
 
 Point your AI agent's base URL to the local proxy (`http://localhost:8000/v1`). It will automatically intercept requests, check your budget, and forward them safely.
